@@ -23,9 +23,18 @@ export default function Textbox(props) {
     const reset = ()=>{
         settxt("");
     }
+    const wordy = ()=>{
+        if (text.length === 0) {
+            return 0;
+        }
+        else{
+            return text.split(' ').length;
+        }
+    }
 
 
   return (
+    <>
   <div className="container mb-2">
             <h1>{props.heading}</h1>
             <textarea className="form-control " value={text} onChange={txtchange} id="txtbox"  rows="8"></textarea>
@@ -35,6 +44,13 @@ export default function Textbox(props) {
             <button onClick={reset} className="btn btn-primary mx-2">Reset</button> 
               
   </div>
-  
+  <div className="container">
+    <h2> Your Summery : </h2>
+    <p>No of Words are : {wordy()}</p>
+    <p>No of Characters :{text.length} </p>
+    <h3>Preview</h3>
+    <pre>{text}</pre>
+  </div>
+  </>
   ) 
 }
