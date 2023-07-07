@@ -20,6 +20,9 @@ export default function Textbox(props) {
         let val = text.toLowerCase();
         settxt(val);
     }
+    const reset = ()=>{
+        settxt("");
+    }
 
 
   return (
@@ -29,10 +32,8 @@ export default function Textbox(props) {
             <br/>
             <button onClick={clicked} className="btn btn-primary mx-1">Uppercase</button>  
             <button onClick={lower} className="btn btn-primary mx-2">Lowercase</button> 
-            <button onClick={clicked} className="btn btn-primary mx-2">Reset</button> 
-            <button onClick={clicked} className="btn btn-primary mx-2">Uppercase</button> 
-            <button onClick={clicked} className="btn btn-primary mx-2">Uppercase</button> 
-            <button onClick={clicked} className="btn btn-primary mx-2">Uppercase</button>    
+            <button onClick={reset} className="btn btn-primary mx-2">Reset</button> 
+              
   </div>
   
   ) 
